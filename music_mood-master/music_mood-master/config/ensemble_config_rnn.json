@@ -1,0 +1,39 @@
+{
+    "agent": "MyEnsembleAgent",
+
+    "model": "MyEnsemble",
+
+    "model_A": "MulticlassClassification",
+    "data_mode_A": "csv",
+    "train_col_A": ["danceability", "energy", "key", "mode",
+         "speechiness", "acousticness","instrumentalness", "liveness",
+         "valence","tempo","time_signature"],
+    "model_A_path": "MulticlassClassification_csv.pth.tar",
+
+    "model_B": "RNN",
+    "data_mode_B": "mp3",
+    "train_col_B": ["audio"],
+    "model_B_path": "RNN_mp3.pth.tar",
+    "hidden_dim": 128,
+    "num_layer": 1,
+
+    "predict_col": "mood",
+
+    "mode": "train",
+    "moods": ["calm", "energetic", "happy", "sad"],
+    "data_mode_combined": "ensemble",
+
+
+    "checkpoint_dir": "checkpoint",
+    "checkpoint_file": "MyEnsemble_RNN.pth.tar",
+    "seed": 100,
+
+    "train_size_percent": 0.75,
+    "validation_size_percent": 0.5,
+    "imbalance": false,
+
+    "epochs": 100,
+    "batch_size":64,
+    "learning_rate":0.001,
+    "device": "cuda:0"
+}

@@ -1,0 +1,38 @@
+{
+    "agent": "MyEnsembleAgent",
+
+    "model": "MyEnsemble",
+
+    "model_A": "MulticlassClassification",
+    "data_mode_A": "csv",
+    "train_col_A": ["danceability", "energy", "key", "mode",
+         "speechiness", "acousticness","instrumentalness", "liveness",
+         "valence","tempo","time_signature"],
+    "model_A_path": "MulticlassClassification.pth.tar",
+
+    "model_B": "LSTM",
+    "data_mode_B": "mp3",
+    "train_col_B": ["audio"],
+    "model_B_path": "LSTM_mp3.pth.tar",
+    "hidden_dim": 32,
+    "num_layer": 2,
+
+    "predict_col": "mood",
+
+    "mode": "train",
+    "moods": ["calm", "energetic", "happy", "sad"],
+    "data_mode_combined": "ensemble",
+
+
+    "checkpoint_dir": "checkpoint",
+    "checkpoint_file": "MyEnsemble.pth.tar",
+    "seed": 100,
+
+    "test_size_percent": 0.2,
+    "validation_size_percent": 0.1,
+    "imbalance": false,
+
+    "epochs": 3,
+    "batch_size":64,
+    "learning_rate":0.001
+}

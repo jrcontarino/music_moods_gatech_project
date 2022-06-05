@@ -1,0 +1,29 @@
+{
+    "agent": "MulticlassClassificationAgent",
+
+    "model": "TransformerModel",
+    "num_layer": 3,
+    "nout":  4,
+    "ninp":  1292,
+    "nhead":  2,
+    "nhid":  256,
+    "nlayers":  2,
+    "dropout": 0.5,
+    "data_mode": "mp3",
+    "mode": "train",
+    "moods": ["calm", "energetic", "happy", "sad"],
+    "train_col": ["audio"],
+    "predict_col": "mood",
+    "checkpoint_dir": "checkpoint",
+    "checkpoint_file": "MulticlassClassification_mp3.pth.tar",
+    "seed": 100,
+
+    "test_size_percent": 0.2,
+    "validation_size_percent": 0.1,
+    "imbalance": true,
+
+    "epochs": 20,
+    "batch_size": 128,
+    "learning_rate":0.0001,
+    "device": "cuda:0"
+}

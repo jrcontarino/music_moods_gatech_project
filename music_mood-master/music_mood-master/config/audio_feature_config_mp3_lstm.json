@@ -1,0 +1,25 @@
+{
+    "agent": "MulticlassClassificationAgent",
+
+    "model": "LSTM",
+    "hidden_dim": 256,
+    "num_layer": 2,
+
+    "data_mode": "mp3",
+    "mode": "train",
+    "moods": ["calm", "energetic", "happy", "sad"],
+    "train_col": ["audio"],
+    "predict_col": "mood",
+    "checkpoint_dir": "checkpoint",
+    "checkpoint_file": "MulticlassClassification_mp3.pth.tar",
+    "seed": 100,
+
+    "train_size_percent": 0.75,
+    "validation_size_percent": 0.5,
+    "imbalance": true,
+
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate":0.005,
+    "device": "cuda:0"
+}

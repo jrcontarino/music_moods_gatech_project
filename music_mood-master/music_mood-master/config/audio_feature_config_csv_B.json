@@ -1,0 +1,23 @@
+{
+    "agent": "MulticlassClassificationAgent",
+    "model": "MulticlassClassification",
+    "data_mode": "csv",
+    "mode": "train",
+    "id_col": "id",
+    "moods": ["calm", "energetic", "happy", "sad"],
+    "train_col": ["danceability", "energy", "key", "mode",
+         "speechiness", "acousticness"],
+    "predict_col": "mood",
+    "checkpoint_dir": "checkpoint",
+    "checkpoint_file": "MulticlassClassification.pth.tar",
+    "seed": 100,
+
+    "test_size_percent": 0.2,
+    "validation_size_percent": 0.1,
+    "imbalance": false,
+
+    "epochs": 10,
+    "batch_size":128,
+    "learning_rate":0.01
+
+}
